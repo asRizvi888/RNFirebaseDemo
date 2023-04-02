@@ -31,6 +31,7 @@ const Home: React.FC = () => {
           name={user?.displayName}
           imgUrl={user?.photoURL}
           provider={user?.providerData[0].providerId}
+          email={user?.email}
         />
       )}
       <View style={[styles.container, {justifyContent: 'center'}]}>
@@ -43,7 +44,7 @@ const Home: React.FC = () => {
         />
         <AuthButton name={'Facebook'} color={'blue'} />
       </View>
-      {user && <Button title="Sign Out" onPress={signOut} />}
+      {user && <Button title="SIGN OUT" onPress={signOut} color={'tomato'} />}
     </SafeAreaView>
   );
 };

@@ -4,21 +4,23 @@ import {View, Image, StyleSheet, Text} from 'react-native';
 interface Props {
   name?: String;
   imgUrl?: any;
+  email?: String;
   provider?: String;
 }
 
-const User: React.FC<Props> = ({name, imgUrl, provider}) => {
+const User: React.FC<Props> = ({name, imgUrl, provider, email}) => {
   return (
     <View style={styles.container}>
       <Image source={{uri: imgUrl}} style={styles.img} />
       <Text
         style={{
-          fontSize: 18,
+          fontSize: 20,
           fontWeight: 'bold',
           color: 'black',
         }}>
         {name}
       </Text>
+      <Text style={{fontSize: 16, marginVertical: 5}}>{email}</Text>
       <Text style={{color: 'grey'}}>{`Authenticated with ${provider}`}</Text>
     </View>
   );
@@ -31,9 +33,9 @@ const styles = StyleSheet.create({
     marginVertical: 25,
   },
   img: {
-    height: 80,
-    width: 80,
-    borderRadius: 40,
+    height: 100,
+    width: 100,
+    borderRadius: 50,
     marginVertical: 10,
   },
 });
